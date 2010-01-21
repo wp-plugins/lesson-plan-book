@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Lesson
-Description: This plugin allows you to display a calendar of all your lessons.  You must create a new page and place {calendar} in the text of the page where you want the calendar to appear.  
+Plugin Name: Lesson 
+Description: This plugin allows you to display a calendar of all your lessons.  You must create a new page and place {LESSON} in the text of the page where you want the calendar to appear.  Visit EdNook.com for support and more information.
 Author: Suborna Fermi, Ronnie Burt, and Kieran O'Shea
 Author URI: http://www.ednook.com
-Version: 1.2
+Version: 1.3
 */
 
 
@@ -122,7 +122,7 @@ function calendar_add_javascript()
 // Function to deal with loading the calendar into pages
 function calendar_insert($content)
 {
-  if (preg_match('{CALENDAR}',$content))
+  if (preg_match('{LESSON}',$content))
     {
       if($_REQUEST['event_id'] == ''){
           $cal_output = calendar();
@@ -130,7 +130,7 @@ function calendar_insert($content)
 	      $cal_output = calendar_details();
 	  }
 	  
-      $content = str_replace('{CALENDAR}',$cal_output,$content);
+      $content = str_replace('{LESSON}',$cal_output,$content);
     }
   return $content;
 }
@@ -246,10 +246,6 @@ function check_calendar()
      span.event {
         font-size:0.75em;
      }
-     .kjo-link {
-        font-size:0.75em;
-        text-align:center;
-     }
      .event-title {
         text-align:center;
         font-weight:bold;
@@ -296,6 +292,11 @@ function check_calendar()
         margin-top:10px;
         padding:5px;
         border:1px solid #D6DED5;
+     }
+     .kjo-link {
+        font-size:0.75em;
+        text-align:center;
+	visibility:vissible;
      }";
      
 
@@ -1918,7 +1919,7 @@ function manage_categories()
 				</tr>
                                 <tr>
 				<td><legend><?php _e('Class Color (Hex format)','calendar'); ?>:</legend></td>
-                                <td><input type="text" name="category_colour" class="input" size="10" maxlength="7" value="<?php echo $cur_cat->category_colour ?>" /><br />(ex. Blue - #ADD8E6, Green - #ADD8E6, Red - #CD5C5C, Orange - #FF8C00, Yellow - #F0E68C)</td>
+                                <td><input type="text" name="category_colour" class="input" size="10" maxlength="7" value="<?php echo $cur_cat->category_colour ?>" /><br />(ex. Blue - #ADD8E6, Green - #90EE90, Red - #CD5C5C, Orange - #FF8C00, Yellow - #F0E68C)</td>
                                 </tr>
                                 </table>
                         </div>
@@ -3035,9 +3036,9 @@ function calendar()
       }
     $calendar_body .= '</table>
 ';
-
-    // A little link to yours truely. See the README if you wish to remove this
-    $calendar_body .= '<div class="kjo-link" style="visibility:visible;display:block;"></div>
+// A little link to yours truely. See the README if you wish to remove this
+    $calendar_body .= '<div class="kjo-link" display:block;">
+<p>'.__('', 'calendar').'<a href="http://www.ednook.com">EdNook.com</a></p></div>
 ';
 
     // Phew! After that bit of string building, spit it all out.
@@ -3136,3 +3137,4 @@ if($result[0]->event_resources3 !=''){
 }
 
 ?>
+
