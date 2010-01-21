@@ -8,7 +8,7 @@ Requires at least: 2.0.2
 Tested up to: 2.9.1
 Stable tag: 1.2
 
-This plugin allows you to display a calendar of all your lessons.  You must create a new page and place {calendar} in the text of the page where you want the calendar to appear.
+This plugin allows you to display a calendar of all your lessons.  You must create a new page and place {LESSON} in the text of the page where you want the calendar to appear.
 
 == Description ==
 
@@ -36,6 +36,8 @@ Visit http://ednook.com/2009/12/30/lesson-plan-book/ for screen shots, a demo, a
 Visit http://ednook.com/2009/12/30/lesson-plan-book/ for a complete demo and screen shots.
 
 == Changelog ==
+= 1.3 =
+* Changed {CALENDAR} key to {LESSON} to minimize plugin conflicts.
 
 = 1.2 =
 * Improved color choices in backend.
