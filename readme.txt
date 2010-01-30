@@ -19,7 +19,7 @@ Ideal for teachers, professors, and instructors of all types of courses!  Share 
 
 1. Upload the `lesson-plan-book` folder to the `/wp-content/plugins/` directory (or use the upload function in the WordPress dashboard!)
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. You must create a new page and place {calendar} in the text of the page where you want the calendar to appear.
+1. You must create a new page and place {LESSON} in the text of the page where you want the calendar to appear.
 
 == Frequently Asked Questions ==
 
